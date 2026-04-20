@@ -19,27 +19,45 @@
 
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        overflow: hidden; /* Mencegah scroll manual */
+        overflow: hidden;
       }
 
       .slide {
         display: none;
         height: 100vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
       }
 
       .slide.active {
         display: flex;
-        animation: fadeIn 0.5s ease-in-out;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      /* Overlay untuk keterbacaan teks */
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.95),
+          rgba(15, 23, 42, 0.4)
+        );
+        z-index: 1;
+      }
+
+      .slide-content {
+        position: relative;
+        z-index: 10;
       }
 
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(10px);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
         }
       }
 
@@ -60,214 +78,256 @@
     <div class="fixed bottom-8 right-8 flex gap-4 z-50">
       <button
         onclick="prevSlide()"
-        class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all border border-white/20"
+        class="bg-white/10 hover:bg-blue-600 backdrop-blur-md text-white px-6 py-3 rounded-xl transition-all border border-white/20"
       >
-        <i class="fa-solid fa-chevron-left"></i>
+        <i class="fa-solid fa-arrow-left mr-2"></i> Prev
       </button>
       <button
         onclick="nextSlide()"
-        class="bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full transition-all shadow-lg shadow-blue-500/20"
+        class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-500/20"
       >
-        <i class="fa-solid fa-chevron-right"></i>
+        Next <i class="fa-solid fa-arrow-right ml-2"></i>
       </button>
     </div>
 
     <section
-      class="slide active bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 items-center justify-center p-8 text-center"
+      class="slide active items-center justify-start p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop');
+      "
     >
-      <div class="max-w-4xl animate__animated animate__zoomIn">
+      <div class="overlay"></div>
+      <div
+        class="slide-content max-w-4xl animate__animated animate__fadeInLeft"
+      >
         <span
-          class="bg-blue-500/20 text-blue-400 px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block border border-blue-500/30"
-          >Business Strategy</span
+          class="bg-blue-600 text-white px-4 py-1 rounded-md text-sm font-bold tracking-widest uppercase mb-6 inline-block"
+          >Business Insight</span
         >
         <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
-          5 Model Bisnis
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 text-glow"
-            >Lestari</span
-          >
+          5 Model Bisnis <br /><span class="text-blue-400">Tahan Lama</span>
         </h1>
-        <p class="text-xl text-slate-300">
-          Mengapa beberapa bisnis bertahan puluhan tahun sementara yang lain
-          hilang? Jawabannya adalah kebutuhan dasar.
+        <p
+          class="text-xl text-slate-300 max-w-2xl border-l-4 border-blue-500 pl-6"
+        >
+          Strategi membangun usaha yang tidak lekang oleh waktu karena berakar
+          pada kebutuhan fundamental manusia.
         </p>
       </div>
     </section>
 
-    <section class="slide items-center justify-center p-8">
-      <div class="grid md:grid-cols-2 gap-12 max-w-6xl items-center">
+    <section
+      class="slide items-center justify-start p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1613796473398-ea9f314b5f02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="overlay"></div>
+      <div class="slide-content grid md:grid-cols-2 gap-12 items-center w-full">
         <div class="space-y-6">
-          <div class="text-blue-500 text-6xl mb-4">
-            <i class="fa-solid fa-heart-pulse animate-pulse"></i>
-          </div>
-          <h2 class="text-5xl font-bold">1. Bisnis Kesehatan</h2>
-          <p class="text-slate-400 text-lg">
-            Selama manusia hidup, kesehatan adalah prioritas utama. Orang rela
-            berinvestasi lebih untuk pemulihan dan stamina.
+          <div class="text-blue-400 text-5xl font-bold">01</div>
+          <h2 class="text-5xl font-bold uppercase tracking-tight">
+            Bisnis <br />Kesehatan
+          </h2>
+          <p class="text-slate-300 text-lg leading-relaxed">
+            Selama manusia hidup, kesehatan adalah prioritas utama. Sektor ini
+            melampaui siklus ekonomi karena urgensi fungsinya bagi kualitas
+            hidup.
           </p>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3">
-              <i class="fa-solid fa-check text-emerald-500"></i> Suplemen &
-              Herbal
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fa-solid fa-check text-emerald-500"></i> Layanan Terapi
-              & Klinik
-            </li>
-            <li class="flex items-center gap-3">
-              <i class="fa-solid fa-check text-emerald-500"></i> Edukasi Hidup
-              Sehat
-            </li>
-          </ul>
-        </div>
-        <div
-          class="bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500"
-        >
-          <div
-            class="aspect-video bg-blue-900/30 rounded-xl flex items-center justify-center"
-          >
-            <i class="fa-solid fa-kit-medical text-8xl text-blue-500/50"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide items-center justify-center p-8 bg-slate-950">
-      <div class="max-w-5xl text-center">
-        <i
-          class="fa-solid fa-graduation-cap text-6xl text-emerald-500 mb-8"
-        ></i>
-        <h2 class="text-5xl font-bold mb-12">2. Bisnis Edukasi</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-blue-600/20 transition-colors"
-          >
-            <h3 class="text-xl font-bold mb-2">Upgrade Skill</h3>
-            <p class="text-slate-400 text-sm">
-              Dunia berubah cepat, orang butuh belajar terus.
-            </p>
-          </div>
-          <div
-            class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-blue-600/20 transition-colors"
-          >
-            <h3 class="text-xl font-bold mb-2">Scalable</h3>
-            <p class="text-slate-400 text-sm">
-              Course digital bisa dijual ribuan kali tanpa stok.
-            </p>
-          </div>
-          <div
-            class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-blue-600/20 transition-colors"
-          >
-            <h3 class="text-xl font-bold mb-2">High Value</h3>
-            <p class="text-slate-400 text-sm">
-              Menjual perubahan hidup, bukan sekadar info.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide items-center justify-center p-8 bg-blue-600">
-      <div class="max-w-4xl text-center space-y-8">
-        <h2 class="text-6xl font-black uppercase">3. Kebutuhan Pokok</h2>
-        <p class="text-2xl text-blue-100 font-light">
-          "Orang bisa menunda beli iPhone, tapi tidak bisa menunda makan."
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <span class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold"
-            >Sembako</span
-          >
-          <span class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold"
-            >Catering</span
-          >
-          <span class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold"
-            >Frozen Food</span
-          >
-        </div>
-      </div>
-    </section>
-
-    <section class="slide items-center justify-center p-8">
-      <div class="grid md:grid-cols-2 gap-12 max-w-6xl items-center">
-        <div class="order-2 md:order-1 flex justify-center">
-          <div class="relative w-80 h-80">
-            <div
-              class="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-20"
-            ></div>
-            <i
-              class="fa-solid fa-city text-[200px] text-slate-700 relative z-10"
-            ></i>
-          </div>
-        </div>
-        <div class="order-1 md:order-2 space-y-6">
-          <h2 class="text-5xl font-bold">4. Properti</h2>
-          <p class="text-slate-400 text-lg">
-            Tempat tinggal adalah kebutuhan primer. Nilainya cenderung naik dan
-            menghasilkan cashflow pasif.
-          </p>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="border border-slate-700 p-4 rounded-xl">
-              <i class="fa-solid fa-house-chimney text-blue-500 mb-2"></i>
-              <p class="text-sm">Sewa & Kos</p>
-            </div>
-            <div class="border border-slate-700 p-4 rounded-xl">
-              <i class="fa-solid fa-building text-emerald-500 mb-2"></i>
-              <p class="text-sm">Jual Beli</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slide items-center justify-center p-8 bg-slate-900">
-      <div class="max-w-4xl space-y-12">
-        <div class="text-center">
-          <h2 class="text-5xl font-bold mb-4">5. Data & Traffic Digital</h2>
-          <p class="text-blue-400 text-xl italic">
-            "Attention is the new Currency"
-          </p>
-        </div>
-        <div
-          class="bg-blue-600/10 border border-blue-500/30 p-8 rounded-3xl relative overflow-hidden"
-        >
-          <div class="flex items-start gap-6 relative z-10">
-            <i class="fa-solid fa-database text-4xl text-blue-500 mt-2"></i>
-            <div>
-              <h4 class="text-2xl font-bold mb-2">Aset Tak Terlihat</h4>
-              <p class="text-slate-400">
-                Siapa yang menguasai database dan traffic (SEO/Ads/Komunitas),
-                bisa mengarahkan penjualan ke bisnis apapun.
-              </p>
-            </div>
-          </div>
-          <div class="absolute -right-20 -bottom-20 opacity-5">
-            <i class="fa-solid fa-chart-line text-[300px]"></i>
+          <div class="flex gap-4">
+            <span
+              class="bg-white/10 px-4 py-2 rounded-lg border border-white/20"
+              >Suplemen</span
+            >
+            <span
+              class="bg-white/10 px-4 py-2 rounded-lg border border-white/20"
+              >Wellness</span
+            >
+            <span
+              class="bg-white/10 px-4 py-2 rounded-lg border border-white/20"
+              >Therapy</span
+            >
           </div>
         </div>
       </div>
     </section>
 
     <section
-      class="slide items-center justify-center p-8 bg-gradient-to-t from-blue-900 to-slate-900 text-center"
+      class="slide items-center justify-start p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1589104760192-ccab0ce0d90f?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
     >
-      <div class="space-y-8 animate__animated animate__fadeInUp">
-        <h2 class="text-5xl font-bold">Mulai Bangun Bisnis Anda Sekarang!</h2>
-        <p class="text-slate-300 max-w-2xl mx-auto">
-          Pilih satu model yang paling sesuai, lalu dukung dengan sistem digital
-          untuk jangka panjang.
+      <div class="overlay"></div>
+      <div class="slide-content max-w-3xl space-y-8">
+        <div class="text-emerald-400 text-5xl font-bold">02</div>
+        <h2 class="text-5xl font-bold">Bisnis Edukasi</h2>
+        <p class="text-xl text-slate-300">
+          Edukasi adalah bisnis yang menjual "Perubahan". Orang selalu ingin
+          naik level, lebih pintar, dan lebih siap menghadapi masa depan.
         </p>
-        <div class="pt-8">
-          <p
-            class="text-sm text-slate-500 tracking-widest uppercase mb-4 font-semibold"
-          >
-            Team TTK © 2026
+        <div
+          class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10"
+        >
+          <h4 class="text-emerald-400 font-bold mb-2 italic">Kenapa Kuat?</h4>
+          <p class="text-slate-400">
+            Skill cepat usang di era digital, memaksa orang untuk terus
+            melakukan 'upgrade' kemampuan secara berkala.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-start p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop');
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          background: linear-gradient(
+            to right,
+            rgba(22, 101, 52, 0.9),
+            rgba(22, 101, 52, 0.3)
+          );
+        "
+      ></div>
+      <div class="slide-content max-w-4xl">
+        <div class="text-white/50 text-5xl font-bold mb-4">03</div>
+        <h2 class="text-6xl font-black mb-6 uppercase tracking-tighter">
+          Kebutuhan Pokok
+        </h2>
+        <p class="text-2xl text-emerald-50 font-light mb-8 italic">
+          "Bisnis yang paling stabil karena produknya harus dikonsumsi setiap
+          hari."
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            class="bg-white text-green-900 p-4 rounded-xl text-center font-bold"
+          >
+            Pangan
+          </div>
+          <div
+            class="bg-white text-green-900 p-4 rounded-xl text-center font-bold"
+          >
+            Sembako
+          </div>
+          <div
+            class="bg-white text-green-900 p-4 rounded-xl text-center font-bold"
+          >
+            FMCG
+          </div>
+          <div
+            class="bg-white text-green-900 p-4 rounded-xl text-center font-bold"
+          >
+            Minuman
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-end p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop');
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          background: linear-gradient(
+            to left,
+            rgba(15, 23, 42, 0.95),
+            rgba(15, 23, 42, 0.4)
+          );
+        "
+      ></div>
+      <div class="slide-content max-w-xl text-right">
+        <div class="text-blue-400 text-5xl font-bold mb-4">04</div>
+        <h2 class="text-5xl font-bold mb-6">Properti & Tempat Tinggal</h2>
+        <p class="text-slate-300 text-lg mb-8">
+          Ruang adalah aset terbatas dengan permintaan yang terus tumbuh.
+          Properti memberikan keamanan nilai aset dan arus kas dari penyewaan.
+        </p>
+        <ul class="text-slate-400 space-y-2">
+          <li>
+            <i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> High
+            Capital Gain
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Passive
+            Income via Rent
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check text-blue-500 mr-2"></i> Low
+            Depreciation Risk
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-center p-12 md:p-24 text-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="overlay" style="background: rgba(15, 23, 42, 0.85)"></div>
+      <div class="slide-content max-w-4xl space-y-8">
+        <div class="text-purple-400 text-5xl font-bold">05</div>
+        <h2 class="text-6xl font-bold">Data & Traffic Digital</h2>
+        <p class="text-2xl text-slate-300">
+          Siapa yang menguasai <strong>Atensi</strong>, menguasai
+          <strong>Pasar</strong>.
+        </p>
+        <div
+          class="inline-block bg-gradient-to-r from-purple-600 to-blue-600 p-8 rounded-3xl shadow-2xl"
+        >
+          <p class="text-lg">
+            Website SEO, Database WhatsApp, dan Komunitas adalah "Real Estate
+            Digital" yang bisa diarahkan untuk menjual produk apapun
+            berkali-kali.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-center p-12 text-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop');
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(30, 41, 59, 0.8),
+            rgba(15, 23, 42, 1)
+          );
+        "
+      ></div>
+      <div class="slide-content space-y-8 animate__animated animate__zoomIn">
+        <h2 class="text-6xl font-bold">Mulai Bangun Fondasi Hari Ini</h2>
+        <p class="text-xl text-slate-400 max-w-xl mx-auto">
+          Bisnis yang awet bukan yang mengikuti tren paling cepat, tapi yang
+          melayani kebutuhan dasar paling tulus.
+        </p>
+        <div class="pt-12">
           <button
             onclick="currentSlide(0)"
-            class="bg-white text-slate-900 px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform uppercase text-xs"
+            class="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-110"
           >
-            Ulangi Presentasi
+            Selesai & Ulangi
           </button>
+          <p
+            class="mt-8 text-slate-500 uppercase tracking-tighter text-sm font-bold"
+          >
+            Team TTK Business Education 2026
+          </p>
         </div>
       </div>
     </section>
@@ -303,13 +363,11 @@
         updateProgress();
       }
 
-      // Keyboard navigation
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
         if (e.key === 'ArrowLeft') prevSlide();
       });
 
-      // Initialize progress
       updateProgress();
     </script>
   </body>
