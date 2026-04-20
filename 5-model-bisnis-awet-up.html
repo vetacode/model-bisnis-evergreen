@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentasi: 5 Model Bisnis Awet Lama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow: hidden;
+        background-color: #0f172a;
+      }
+      .slide {
+        display: none;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .slide.active {
+        display: flex;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.95),
+          rgba(15, 23, 42, 0.6)
+        );
+        z-index: 1;
+      }
+      .slide-content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .progress-bar {
+        transition: width 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="text-white">
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-800 z-50">
+      <div
+        id="progressBar"
+        class="h-full bg-blue-500 progress-bar"
+        style="width: 0%"
+      ></div>
+    </div>
+
+    <div class="fixed bottom-8 right-8 flex gap-4 z-50">
+      <button
+        onclick="prevSlide()"
+        class="bg-white/10 hover:bg-blue-600 backdrop-blur-md text-white px-6 py-3 rounded-xl transition-all border border-white/20"
+      >
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button
+        onclick="nextSlide()"
+        class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-500/20"
+      >
+        Next <i class="fa-solid fa-arrow-right ml-2"></i>
+      </button>
+    </div>
+
+    <section
+      class="slide active items-center p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop');
+      "
+    >
+      <div class="overlay"></div>
+      <div
+        class="slide-content max-w-4xl animate__animated animate__fadeInLeft"
+      >
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+          5 Model Bisnis <br /><span class="text-blue-400">Yang Awet Lama</span>
+        </h1>
+        <p
+          class="text-xl text-slate-300 leading-relaxed border-l-4 border-blue-500 pl-6"
+        >
+          Banyak bisnis muncul lalu hilang. Namun ada beberapa jenis bisnis yang
+          cenderung lebih tahan lama karena berhubungan langsung dengan
+          kebutuhan dasar manusia. Berikut penjelasan satu per satu.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1613796473398-ea9f314b5f02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="overlay"></div>
+      <div class="slide-content grid md:grid-cols-2 gap-12 items-center w-full">
+        <div class="space-y-6">
+          <div class="text-blue-400 text-4xl font-bold">
+            01. BISNIS KESEHATAN
+          </div>
+          <h2 class="text-3xl font-bold italic text-slate-200">
+            "Selama manusia hidup, kebutuhan akan sehat tidak akan pernah
+            hilang."
+          </h2>
+          <p class="text-slate-300">
+            Bahkan ketika ekonomi sedang sulit, orang tetap mencari solusi untuk
+            menjaga badan, memperbaiki stamina, dan pemulihan.
+          </p>
+          <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+            <h4
+              class="text-blue-400 font-bold mb-3 uppercase text-sm tracking-widest"
+            >
+              Kenapa Sektor Ini Kuat?
+            </h4>
+            <ul class="text-sm space-y-2 text-slate-300">
+              <li>
+                <i class="fa-solid fa-check text-blue-500 mr-2"></i>Berhubungan
+                dengan kebutuhan utama manusia.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-blue-500 mr-2"></i>Orang rela
+                bayar mahal untuk solusi dipercaya.
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-blue-500 mr-2"></i>Repeat order
+                tinggi (suplemen, terapi).
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-blue-500 mr-2"></i>Pasar sangat
+                luas dari anak hingga lansia.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-blue-600/20 p-6 rounded-xl border border-blue-500/30">
+            <h4 class="font-bold mb-3">Contoh Model:</h4>
+            <p class="text-sm text-slate-300">
+              Herbal/Madu, Klinik/Bekam, Program Diet, Kelas Edukasi Sehat, &
+              Website SEO Kesehatan.
+            </p>
+          </div>
+          <p class="text-sm italic text-blue-300 font-semibold">
+            Intinya: Kesehatan bukan sekadar tren, tetapi kebutuhan yang dicari
+            sepanjang hidup.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1589104760192-ccab0ce0d90f?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="overlay"></div>
+      <div class="slide-content max-w-4xl space-y-8">
+        <div class="text-emerald-400 text-4xl font-bold">
+          02. BISNIS EDUKASI
+        </div>
+        <p class="text-2xl text-slate-200 leading-relaxed">
+          Edukasi adalah bisnis yang
+          <span class="text-emerald-400 font-bold">menjual perubahan</span>.
+          Orang belajar karena ingin naik level, lebih terampil, atau siap
+          menghadapi masa depan.
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <h4
+              class="text-emerald-400 font-bold uppercase text-sm tracking-widest"
+            >
+              Kenapa Sektor Ini Kuat?
+            </h4>
+            <ul class="text-sm space-y-2 text-slate-300">
+              <li>
+                <i class="fa-solid fa-graduation-cap text-emerald-500 mr-2"></i
+                >Selalu ada orang ingin belajar hal baru.
+              </li>
+              <li>
+                <i class="fa-solid fa-graduation-cap text-emerald-500 mr-2"></i
+                >Skill cepat berubah (digital/AI).
+              </li>
+              <li>
+                <i class="fa-solid fa-graduation-cap text-emerald-500 mr-2"></i
+                >Produk digital = Tanpa stok fisik.
+              </li>
+              <li>
+                <i class="fa-solid fa-graduation-cap text-emerald-500 mr-2"></i
+                >Mudah diperbesar lewat kelas online.
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-emerald-600/10 p-6 rounded-xl border border-emerald-500/20"
+          >
+            <h4 class="font-bold mb-3">Contoh:</h4>
+            <p class="text-sm text-slate-300">
+              Kelas Zoom, Kursus SEO/AI, Membership Belajar, Ebook/Modul, &
+              Training Perusahaan.
+            </p>
+            <p class="mt-6 text-sm font-bold text-emerald-400 uppercase italic">
+              Intinya: Selama manusia ingin berkembang, edukasi selalu
+              dibutuhkan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop');
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          background: linear-gradient(
+            to right,
+            rgba(22, 101, 52, 0.95),
+            rgba(22, 101, 52, 0.5)
+          );
+        "
+      ></div>
+      <div class="slide-content max-w-4xl space-y-6">
+        <div class="text-white text-4xl font-bold uppercase tracking-tighter">
+          03. KEBUTUHAN POKOK
+        </div>
+        <p class="text-xl text-emerald-50 font-light">
+          "Orang bisa menunda beli gadget atau liburan, tapi tidak bisa menunda
+          makan, minum, dan mandi."
+        </p>
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-white/10 p-6 rounded-2xl">
+            <h4 class="font-bold mb-4 border-b border-white/20 pb-2">
+              Kenapa Kuat?
+            </h4>
+            <p class="text-sm leading-relaxed text-emerald-100">
+              Dibutuhkan setiap hari dengan repeat order sangat tinggi. Pasar
+              mencakup seluruh lapisan masyarakat dari bawah hingga atas.
+            </p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-2xl">
+            <h4 class="font-bold mb-4 border-b border-white/20 pb-2">
+              Model Bisnis:
+            </h4>
+            <p class="text-sm leading-relaxed text-emerald-100">
+              Warung sembako, Catering harian, Frozen food, Distributor bahan
+              pokok, hingga Brand minuman/makanan sendiri.
+            </p>
+          </div>
+        </div>
+        <p class="text-center font-bold text-lg pt-4">
+          Bisnis ini stabil karena manusia harus mengonsumsi barang dasar secara
+          kontinyu.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-end p-12 md:p-24"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop');
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          background: linear-gradient(
+            to left,
+            rgba(15, 23, 42, 0.95),
+            rgba(15, 23, 42, 0.4)
+          );
+        "
+      ></div>
+      <div class="slide-content max-w-xl text-right">
+        <div class="text-blue-400 text-4xl font-bold mb-4">04. PROPERTI</div>
+        <h2 class="text-2xl font-bold mb-6 text-slate-200">
+          Kebutuhan Ruang Hidup & Usaha
+        </h2>
+        <p class="text-slate-300 mb-6">
+          Karena jumlah penduduk terus bergerak dan kebutuhan ruang terus ada,
+          bisnis ini punya umur panjang dan nilai aset yang terus naik.
+        </p>
+        <div class="space-y-4 inline-block text-left">
+          <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+            <p class="text-sm text-slate-300 font-semibold italic">
+              Kenapa Kuat?
+            </p>
+            <p class="text-xs text-slate-400">
+              Cashflow dari sewa, kenaikan nilai aset jangka panjang, & banyak
+              turunan jasa (renovasi/listing).
+            </p>
+          </div>
+          <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+            <p class="text-sm text-slate-300 font-semibold italic">Contoh:</p>
+            <p class="text-xs text-slate-400">
+              Jual beli rumah/kavling, Kos/Kontrakan, Jasa Renovasi, Sewa
+              Ruko/Villa, & Portal Listing SEO.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-center p-12 md:p-24 text-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="overlay" style="background: rgba(15, 23, 42, 0.9)"></div>
+      <div class="slide-content max-w-4xl">
+        <div class="text-purple-400 text-4xl font-bold mb-6">
+          05. DATA & TRAFFIC DIGITAL
+        </div>
+        <p class="text-xl text-slate-300 mb-8">
+          "Siapa yang menguasai perhatian manusia, menguasai traffic. Siapa yang
+          menguasai traffic, bisa mengarahkan penjualan apapun."
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div
+            class="bg-purple-600/20 p-4 rounded-xl border border-purple-500/30"
+          >
+            <h5 class="font-bold text-sm">Website SEO</h5>
+            <p class="text-xs text-slate-400 mt-2">
+              Mesin lead jangka panjang lewat artikel.
+            </p>
+          </div>
+          <div
+            class="bg-purple-600/20 p-4 rounded-xl border border-purple-500/30"
+          >
+            <h5 class="font-bold text-sm">Database</h5>
+            <p class="text-xs text-slate-400 mt-2">
+              Komunitas WhatsApp/Telegram berbayar.
+            </p>
+          </div>
+          <div
+            class="bg-purple-600/20 p-4 rounded-xl border border-purple-500/30"
+          >
+            <h5 class="font-bold text-sm">Affiliate</h5>
+            <p class="text-xs text-slate-400 mt-2">
+              Menjual produk pihak lain berbasis traffic.
+            </p>
+          </div>
+        </div>
+        <p class="mt-8 text-purple-400 font-bold">
+          Intinya: Punya traffic & database = Kekuatan menggerakkan banyak
+          bisnis sekaligus.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="slide items-center justify-center p-12 text-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop');
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(30, 41, 59, 0.8),
+            rgba(15, 23, 42, 1)
+          );
+        "
+      ></div>
+      <div class="slide-content space-y-8 animate__animated animate__zoomIn">
+        <h2 class="text-5xl font-bold text-blue-400">Kesimpulan</h2>
+        <div class="grid md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+          <div class="text-xs bg-white/5 p-3 rounded-lg">
+            <strong>Kesehatan:</strong> Kebutuhan Tubuh
+          </div>
+          <div class="text-xs bg-white/5 p-3 rounded-lg">
+            <strong>Edukasi:</strong> Ingin Naik Level
+          </div>
+          <div class="text-xs bg-white/5 p-3 rounded-lg">
+            <strong>Pokok:</strong> Dipakai Tiap Hari
+          </div>
+          <div class="text-xs bg-white/5 p-3 rounded-lg">
+            <strong>Properti:</strong> Ruang & Aset
+          </div>
+          <div class="text-xs bg-white/5 p-3 rounded-lg">
+            <strong>Digital:</strong> Atensi & Pasar
+          </div>
+        </div>
+        <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          Bangun bisnis di salah satu sektor di atas, lalu dukung dengan
+          <span class="text-white font-bold underline"
+            >sistem digital, traffic, dan database sendiri</span
+          >. Dengan begitu, bisnis Anda bisa bertahan jauh lebih lama.
+        </p>
+        <div class="pt-8">
+          <a
+            href="https://carisolusi.biz.id/produk/44/website-seo-praktis-wsp-ini-bisa-datangkan-customer-tiap-hari"
+            target="_blank"
+          >
+            <button
+              onclick="currentSlide(0)"
+              class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-110"
+            >
+              Mulai Miliki Asset Digital
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let slides = document.querySelectorAll('.slide');
+      let index = 0;
+      let progressBar = document.getElementById('progressBar');
+
+      function updateProgress() {
+        let progress = ((index + 1) / slides.length) * 100;
+        progressBar.style.width = progress + '%';
+      }
+
+      function currentSlide(n) {
+        slides[index].classList.remove('active');
+        index = n;
+        slides[index].classList.add('active');
+        updateProgress();
+      }
+
+      function nextSlide() {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+        updateProgress();
+      }
+
+      function prevSlide() {
+        slides[index].classList.remove('active');
+        index = (index - 1 + slides.length) % slides.length;
+        slides[index].classList.add('active');
+        updateProgress();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+
+      updateProgress();
+    </script>
+  </body>
+</html>
